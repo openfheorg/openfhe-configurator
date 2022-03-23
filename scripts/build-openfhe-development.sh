@@ -5,21 +5,21 @@
 
 ROOT=`pwd`
 
-cd $ROOT/openfhe-staging/openfhe-development || abort "The build has not been staged yet."
+cd $ROOT/openfhe-staging/openfhe-development || abort "The [default] build has not been staged yet."
 
 if [ ! -d build ]; then
-  mkdir build || abort "Unable to create openfhe-development build directory."
+  mkdir build || abort "Unable to create openfhe-development [default] build directory."
 fi
-cd $ROOT/openfhe-staging/openfhe-development/build || abort "Unable to enter openfhe-development build directory."
+cd $ROOT/openfhe-staging/openfhe-development/build || abort "Unable to enter openfhe-development [default] build directory."
 
 if [ -f Makefile ]; then
   separator
-  echo "Cleaning openfhe-development build."
+  echo "Cleaning openfhe-development [default] build."
   echo
   make clean
 fi
 
-cmake .. || abort "Failure of cmake in openfhe-development."
+cmake .. || abort "Failure of cmake in openfhe-development [default]."
 
 CPUS=`lscpu | egrep "^CPU\(s\)" | awk '{print $2}'`
 if [ $CPUS -lt 1 ]; then
@@ -27,11 +27,11 @@ if [ $CPUS -lt 1 ]; then
 fi
 
 separator
-echo "Building openfhe-development with -j$CPUS."
+echo "Building openfhe-development [default] with -j$CPUS."
 echo
-make -j$CPUS || abort "Build of openfhe-development failed."
+make -j$CPUS || abort "Build of openfhe-development [default] failed."
 
 
 separator
-echo "Building openfhe-development succeeded."
+echo "Building openfhe-development [default] succeeded."
 echo

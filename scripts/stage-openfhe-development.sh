@@ -26,7 +26,7 @@ echo
 git status
 
 separator
-echo "Staging build."
+echo "Staging [default] build."
 echo
 cd $ROOT
 if [ -d ./openfhe-staging ]; then
@@ -37,7 +37,7 @@ cd $ROOT/openfhe-staging || abort "Unable to create openfhe staging directory."
 cp -r $ROOT/repos/openfhe-development/ .
 
 separator
-echo "Build is staged."
+echo "Build [default] is staged."
 echo "You may now run scripts/build-openfhe-development.sh to perform a default build."
 echo
 
