@@ -1,0 +1,2 @@
+OPENFHE_DEVELOPMENT_BRANCH=2022-02-22-jbates-hexl-split-take-3
+OPENFHE_HEXL_BRANCH=jbates-2022-02-22-take-3
