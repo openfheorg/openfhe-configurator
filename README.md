@@ -55,7 +55,7 @@ You may now run scripts/build-openfhe-development-hexl.sh to perform a hexl-enab
 At current time, the following build types are supported:
 
 |backend|development|release|
-| --- | --- | --- |
+|:--- | :---: | :---: |
 |default|X||
 |HEXL-enabled|X||
 
