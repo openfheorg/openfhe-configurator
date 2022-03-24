@@ -12,12 +12,21 @@ ROOT=`pwd`
 echo
 echo "OpenFHE configurator"
 echo
-read -p "Would you like an OpenFHE Release build? [y/n] : " yn
+
+if [ -d ./openfhe-staging ]; then
+  read -p "A previous staging directory exists, delete? [y/n] : " yn
+  case $yn in
+    [Nn]* ) echo; echo "Unwilling to proceed - aborting."; exit 1; break;;
+  esac
+  rm -rf ./openfhe-staging
+fi
+
+read -p "Would you like an OpenFHE Release build?     [y/n] : " yn
 case $yn in
   [Yy]* ) OPENFHE_REPO="openfhe-release"; break;;
 esac
 
-read -p "Would you like a HEXL build?             [y/n] : " yn
+read -p "Would you like a HEXL build?                 [y/n] : " yn
 case $yn in
   [Yy]* ) OPENFHE_HEXL="openfhe-hexl"; break;;
 esac
