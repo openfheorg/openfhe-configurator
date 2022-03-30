@@ -59,7 +59,6 @@ At current time, the following build types are supported:
 |default|X||
 |HEXL-enabled|X||
 
-# Contact
+# For More Information
 
-
-
+Please see [OpenFHE Development](https://github.com/openfheorg/openfhe-development)
