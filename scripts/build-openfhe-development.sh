@@ -31,7 +31,7 @@ if [ $CPUS -lt 1 ]; then
 fi
 
 separator
-echo "Making openfhe-development with cc $CC cxx $CXX cmake flags $CMAKE_FLAGS and make -j$CPUS."
+echo "Making openfhe-development with CC=$CC CXX=$CXX CMAKE_FLAGS=$CMAKE_FLAGS and $CPUS cpus."
 echo
 make -j$CPUS || abort "Build of openfhe-development failed."
 
