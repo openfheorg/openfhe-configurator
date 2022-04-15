@@ -1,2 +1,2 @@
 OPENFHE_DEVELOPMENT_BRANCH=main
-OPENFHE_HEXL_BRANCH=2022-04-13-jbates-hexl-ModReduce-variant-1
+OPENFHE_HEXL_BRANCH=2022-04-13-jbates-hexl-ModReduce-variant-2
