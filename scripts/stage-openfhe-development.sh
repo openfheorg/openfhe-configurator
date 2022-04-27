@@ -19,6 +19,7 @@ separator
 echo "Switching to branch openfhe-development $OPENFHE_DEVELOPMENT_BRANCH."
 echo
 cd $ROOT/repos/openfhe-development || abort "Clone of openfhe-development failed."
+git pull || abort "Pull of the openfhe-development failed."
 git checkout $OPENFHE_DEVELOPMENT_BRANCH || abort "Checkout of openfhe-development branch $OPENFHE_DEVELOPMENT_BRANCH failed."
 separator
 echo "Status of branch openfhe-development $OPENFHE_DEVELOPMENT_BRANCH."
