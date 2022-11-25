@@ -5,8 +5,8 @@
 
 ROOT=`pwd`
 
-mkdir repos > /dev/null 2>&1
-cd $ROOT/repos || abort "Unable to create repos directory."
+mkdir openfhe-staging > /dev/null 2>&1
+cd $ROOT/openfhe-staging || abort "Unable to create repos directory."
 
 if [ ! -d openfhe-development ]; then
   separator
@@ -18,7 +18,7 @@ fi
 separator
 echo "Switching to branch openfhe-development $OPENFHE_DEVELOPMENT_BRANCH."
 echo
-cd $ROOT/repos/openfhe-development || abort "Clone of openfhe-development failed."
+cd $ROOT/openfhe-staging/openfhe-development || abort "Clone of openfhe-development failed."
 git checkout main || abort "Checkout of openfhe-hexl main failed."
 git pull || abort "Pull of the openfhe-development failed."
 git checkout $OPENFHE_DEVELOPMENT_BRANCH || abort "Checkout of openfhe-development branch $OPENFHE_DEVELOPMENT_BRANCH failed."
@@ -26,6 +26,8 @@ separator
 echo "Status of branch openfhe-development $OPENFHE_DEVELOPMENT_BRANCH."
 echo
 git status
+
+exit
 
 separator
 echo "Staging [default] build."
@@ -36,7 +38,7 @@ if [ -d ./openfhe-staging ]; then
 fi
 mkdir $ROOT/openfhe-staging > /dev/null 2>&1
 cd $ROOT/openfhe-staging || abort "Unable to create openfhe staging directory."
-cp -r $ROOT/repos/openfhe-development/ .
+cp -r $ROOT/openfhe-staging/openfhe-development/ .
 
 separator
 echo "Build [default] is staged."

@@ -7,15 +7,15 @@ ROOT=`pwd`
 
 $ROOT/scripts/stage-openfhe-development.sh || abort "Unable to stage openfhe-development [hexl-enabled]."
 
-if [ ! -d $ROOT/repos/openfhe-hexl ]; then
-  cd $ROOT/repos || abort "Unable to enter the repos directory."
+if [ ! -d $ROOT/openfhe-staging/openfhe-hexl ]; then
+  cd $ROOT/openfhe-staging || abort "Unable to enter the repos directory."
   git clone https://github.com/openfheorg/openfhe-hexl.git || abort "Unable to clone the openfhe-hexl repository."
 fi
 
 separator
 echo "Switching to branch openfhe-hexl $OPENFHE_HEXL_BRANCH."
 echo
-cd $ROOT/repos/openfhe-hexl || abort "Clone of openfhe-hexl failed."
+cd $ROOT/openfhe-staging/openfhe-hexl || abort "Clone of openfhe-hexl failed."
 git checkout main || abort "Checkout of openfhe-hexl main failed."
 git pull || abort "Pull of the openfhe-hexl failed."
 git checkout $OPENFHE_HEXL_BRANCH || abort "Checkout of openfhe-hexl branch $OPENFHE_HEXL_BRANCH failed."
