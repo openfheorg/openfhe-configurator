@@ -26,6 +26,15 @@ git status
 
 scripts/stage-openfhe-development-hexl.sh || abort "Unable to stage openfhe-hexl into openfhe-development."
 
+echo "Fixing wrong intel-hexl version v1.2.4 -> v1.2.5"
+VERSION_INCLUSIVE_FILES=$(find . -type f -name "*.sh"| xargs grep "1.2.4" | cut -d ":" -f1)
+for f in $VERSION_INCLUSIVE_FILES
+do
+  echo $f
+  sed -i s/1\.2\.4/1\.2\.5/g $f
+done
+
+
 separator
 echo "Build [hexl-enabled] is staged."
 echo "You may now run scripts/build-openfhe-development-hexl.sh to perform a hexl-enabled build."
