@@ -30,4 +30,3 @@ separator
 echo "Build [hexl-enabled] is staged."
 echo "You may now run scripts/build-openfhe-development-hexl.sh to perform a hexl-enabled build."
 echo
-
