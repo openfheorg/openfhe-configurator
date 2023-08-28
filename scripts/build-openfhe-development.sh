@@ -23,7 +23,8 @@ if [ -f Makefile ]; then
   make clean
 fi
 
-cmake $CMAKE_FLAGS .. || abort "Failure of cmake in openfhe-development."
+#cmake $CMAKE_FLAGS .. || abort "Failure of cmake in openfhe-development."
+cmake $CMAKE_FLAGS -DINTEL_HEXL_HINT_DIR=$ROOT/openfhe-staging .. || abort "Failure of cmake in openfhe-development."
 
 CPUS=`lscpu | egrep "^CPU\(s\)" | awk '{print $2}'`
 if [ $CPUS -lt 1 ]; then

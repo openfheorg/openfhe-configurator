@@ -40,4 +40,3 @@ if [ "x$OPENFHE_HEXL" = "x" ]; then
 else
   $ROOT/scripts/stage-openfhe-development-hexl.sh
 fi
-

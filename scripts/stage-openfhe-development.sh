@@ -42,4 +42,3 @@ separator
 echo "Build [default] is staged."
 echo "You may now run scripts/build-openfhe-development.sh to perform a default build."
 echo
-
