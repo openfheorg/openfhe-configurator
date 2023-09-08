@@ -2,6 +2,9 @@
 
 Use this repository to configure and build OpenFHE for supported hardware acceleration modes.
 
+Before following the steps below, we recommend following the guidelines outlined in the `Accelerating OpenFHE using Specialized Hardware Backends` section of 
+[Building OpenFHE for Best Performance](https://github.com/openfheorg/openfhe-development/blob/main/docs/static_docs/Best_Performance.md).
+
 # How To Use
 
 ```
