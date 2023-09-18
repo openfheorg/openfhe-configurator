@@ -31,12 +31,16 @@ case $yn in
   [Yy]* ) OPENFHE_HEXL="openfhe-hexl"; break;;
 esac
 
+if [ "x$OPENFHE_INSTALL_DIR" = "x" ]; then
+  OPENFHE_INSTALL_DIR=$ROOT/openfhe-staging/install
+fi
+
 if [ "x$OPENFHE_HEXL" = "x" ]; then
   if [ "$OPENFHE_REPO" = "$OPENFHE_DEVELOPMENT_REPO" ]; then
-    $ROOT/scripts/stage-openfhe-development.sh
+    OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR $ROOT/scripts/stage-openfhe-development.sh
   else
     echo "Unsupported build type."
   fi
 else
-  $ROOT/scripts/stage-openfhe-development-hexl.sh
+  OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR $ROOT/scripts/stage-openfhe-development-hexl.sh
 fi
