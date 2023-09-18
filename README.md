@@ -53,15 +53,15 @@ You may now run scripts/build-openfhe-development.sh to perform a hexl-enabled b
 [ OpenFHE HEXL-enabled build commences]
 ```
 
-By default, the `openfhe` and `HEXL` libraries will be installed at `openfhe-configurator/openfhe-staging/install'.
-If you want to change the istall location, pass an 'OPENFHE_INSTALL_DIR' value to each script e.g.,
+By default, the `openfhe` and `HEXL` libraries are installed at `openfhe-configurator/openfhe-staging/install'.
+If you want to change the istall location, pass an `OPENFHE_INSTALL_DIR` value to each script e.g.,
 
 ```
 % OPENFHE_INSTALL_DIR=/usr/local scripts/configure.sh
 % OPENFHE_INSTALL_DIR=/usr/local scripts/build-openfhe-development.sh
 ```
 
-If you want to change OpenFHE build paramaters, pass those changes to `build-openfhe-development.sh` as 'CMAKE_FLAGS' e.g.,
+If you want to change OpenFHE build paramaters, pass those changes to `build-openfhe-development.sh` as `CMAKE_FLAGS` e.g.,
 
 ```
 % CMAKE_FLAGS="-DWITH_OPENMP=OFF -DCMAKE_BUILD_TYPE=Debug" scripts/build-openfhe-development.sh
