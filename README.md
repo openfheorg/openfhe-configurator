@@ -53,7 +53,7 @@ You may now run scripts/build-openfhe-development.sh to perform a hexl-enabled b
 [ OpenFHE HEXL-enabled build commences]
 ```
 
-By default, the `openfhe` and `HEXL` libraries are installed at `openfhe-configurator/openfhe-staging/install'.
+By default, the `openfhe` and `HEXL` libraries are installed at `openfhe-configurator/openfhe-staging/install`.
 If you want to change the istall location, pass an `OPENFHE_INSTALL_DIR` value to each script e.g.,
 
 ```
