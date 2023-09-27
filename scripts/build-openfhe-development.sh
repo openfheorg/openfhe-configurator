@@ -27,7 +27,7 @@ if [ "x$OPENFHE_INSTALL_DIR" = "x" ]; then
   OPENFHE_INSTALL_DIR=$ROOT/openfhe-staging/install
 fi
 echo "OPENFHE_INSTALL_DIR set to $OPENFHE_INSTALL_DIR"
-cmake $CMAKE_FLAGS -DCMAKE_INSTALL_PREFIX=$OPENFHE_INSTALL_DIR -DINTEL_HEXL_HINT_DIR=$OPENFHE_INSTALL_DIR .. || abort "Failure of cmake in openfhe-development."
+cmake $CMAKE_FLAGS -DCMAKE_INSTALL_PREFIX=$OPENFHE_INSTALL_DIR .. || abort "Failure of cmake in openfhe-development."
 
 CPUS=`lscpu | egrep "^CPU\(s\)" | awk '{print $2}'`
 if [ $CPUS -lt 1 ]; then

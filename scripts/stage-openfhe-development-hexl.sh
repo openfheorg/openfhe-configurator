@@ -13,11 +13,14 @@ OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR $ROOT/scripts/stage-openfhe-development
 
 if [ ! -d $ROOT/repos/openfhe-hexl ]; then
   cd $ROOT/repos || abort "Unable to enter the repos directory."
+  separator
+  echo "Cloning openfhe-hexl repository."
+  echo
   git clone https://github.com/openfheorg/openfhe-hexl.git || abort "Unable to clone the openfhe-hexl repository."
 fi
 
 separator
-echo "Switching to branch openfhe-hexl $OPENFHE_HEXL_BRANCH."
+echo "Switching to openfhe-hexl branch $OPENFHE_HEXL_BRANCH."
 echo
 cd $ROOT/repos/openfhe-hexl || abort "Clone of openfhe-hexl failed."
 git checkout main || abort "Checkout of openfhe-hexl main failed."
@@ -25,7 +28,7 @@ git pull || abort "Pull of the openfhe-hexl failed."
 git checkout $OPENFHE_HEXL_BRANCH || abort "Checkout of openfhe-hexl branch $OPENFHE_HEXL_BRANCH failed."
 
 separator
-echo "Status of branch openfhe-hexl $OPENFHE_HEXL_BRANCH."
+echo "Status of openfhe-hexl branch $OPENFHE_HEXL_BRANCH."
 echo
 git status
 
