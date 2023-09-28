@@ -38,6 +38,7 @@ separator
 echo "Making openfhe-development with CC=$CC CXX=$CXX CMAKE_FLAGS=$CMAKE_FLAGS and $CPUS cpus."
 echo
 make -j $CPUS || abort "Build of openfhe-development failed."
+make install
 
 separator
 echo "Building openfhe-development with CC=$CC CXX=$CXX CMAKE_FLAGS=$CMAKE_FLAGS [COMPLETE]"

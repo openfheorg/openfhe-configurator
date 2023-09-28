@@ -32,6 +32,8 @@ echo "Status of openfhe-hexl branch $OPENFHE_HEXL_BRANCH."
 echo
 git status
 
+separator
+echo "Staging [hexl-enabled] build."
 OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR scripts/stage-openfhe-development-hexl.sh || abort "Unable to stage openfhe-hexl into openfhe-development."
 
 separator
