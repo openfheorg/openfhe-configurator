@@ -14,54 +14,74 @@ Before following the steps below, we recommend following the guidelines outlined
 
 OpenFHE configurator
 
-Would you like an OpenFHE Release build? [y/n] : n
-Would you like a HEXL build?             [y/n] : y
+Would you like to stage an openfhe-development build?     [y/n] : n
+Would you like to stage an openfhe-hexl build?            [y/n] : y
 
 ===============================================================================
 
-Switching to branch openfhe-development main.
-
-Already on 'main'
-Your branch is up to date with 'origin/main'.
+Cloning openfhe-development repository.
 
 ===============================================================================
 
-Status of branch openfhe-development main.
+Switching to openfhe-development branch v1.1.1.
 
-On branch main 
-Your branch is up to date with 'origin/main'.
+===============================================================================
 
-nothing to commit, working tree clean
+Status of openfhe-development brach v1.1.1.
 
 ===============================================================================
 
 Staging [default] build.
-
 
 ===============================================================================
 
 Build [default] is staged.
 You may now run scripts/build-openfhe-development.sh to perform a default build.
 
+===============================================================================
+
+Cloning openfhe-hexl repository.
+
+===============================================================================
+
+Switching to openfhe-hexl branch v1.1.1.2.
+
+===============================================================================
+
+Status of openfhe-hexl branch v1.1.1.2.
+
+===============================================================================
+
+Staging [hexl-enabled] build.
 
 ===============================================================================
 
 Build [hexl-enabled] is staged.
-You may now run scripts/build-openfhe-development-hexl.sh to perform a hexl-enabled build.
+You may now run scripts/build-openfhe-development.sh to perform a hexl-enabled build.
 
-% scripts/build-openfhe-development-hexl.sh
+% scripts/build-openfhe-development.sh
 [ OpenFHE HEXL-enabled build commences]
 ```
 
-# Supported Configurations
+By default, the `OpenFHE` and `HEXL` libraries are built and installed at `openfhe-configurator/openfhe-staging/install`.
+If you want to change the istall location, pass an `OPENFHE_INSTALL_DIR` value to the build script e.g.,
 
-At current time, the following build types are supported:
+```
+% OPENFHE_INSTALL_DIR=~/local scripts/build-openfhe-development.sh
+```
 
-|backend|development|release|
-|:--- | :---: | :---: |
-|default|X||
-|HEXL-enabled|X||
+If you want to change OpenFHE build paramaters, pass those changes as `CMAKE_FLAGS` e.g.,
+
+```
+% CMAKE_FLAGS="-DWITH_OPENMP=OFF -DCMAKE_BUILD_TYPE=Debug" scripts/build-openfhe-development.sh
+```
+
+If you want to use a preinstalled build of the Intel HEXL library with your openfhe-hexl build, include the following:
+
+```
+% CMAKE_FLAGS="-DINTEL_HEXL_PREBUILT=ON -DINTEL_HEXL_HINT_DIR=[PATH TO INTEL HEXL]" scripts/build-openfhe-development.sh
+```
 
 # For More Information
 
-Please see [OpenFHE Development](https://github.com/openfheorg/openfhe-development)
+Please see [OpenFHE Development](https://github.com/openfheorg/openfhe-development) and [OpenFHE HEXL](https://github.com/openfheorg/openfhe-hexl)

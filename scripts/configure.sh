@@ -3,10 +3,6 @@
 . ./scripts/vars.sh
 . ./scripts/functions.sh
 
-OPENFHE_DEVELOPMENT_REPO="openfhe-development"
-OPENFHE_REPO="openfhe-development"
-OPENFHE_HEXL=""
-
 ROOT=`pwd`
 
 echo
@@ -21,22 +17,16 @@ if [ -d ./openfhe-staging ]; then
   rm -rf ./openfhe-staging
 fi
 
-read -p "Would you like an OpenFHE Release build?     [y/n] : " yn
-case $yn in
-  [Yy]* ) OPENFHE_REPO="openfhe-release"; break;;
-esac
-
-read -p "Would you like a HEXL build?                 [y/n] : " yn
-case $yn in
-  [Yy]* ) OPENFHE_HEXL="openfhe-hexl"; break;;
-esac
-
-if [ "x$OPENFHE_HEXL" = "x" ]; then
-  if [ "$OPENFHE_REPO" = "$OPENFHE_DEVELOPMENT_REPO" ]; then
-    $ROOT/scripts/stage-openfhe-development.sh
-  else
-    echo "Unsupported build type."
-  fi
-else
-  $ROOT/scripts/stage-openfhe-development-hexl.sh
+if [ "x$OPENFHE_INSTALL_DIR" = "x" ]; then
+  OPENFHE_INSTALL_DIR=$ROOT/openfhe-staging/install
 fi
+
+read -p "Would you like to stage an openfhe-development build?     [y/n] : " yn
+case $yn in
+  [Yy]* ) OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR $ROOT/scripts/stage-openfhe-development.sh; exit 1; break;;
+esac
+
+read -p "Would you like to stage an openfhe-hexl build?            [y/n] : " yn
+case $yn in
+  [Yy]* ) OPENFHE_INSTALL_DIR=$OPENFHE_INSTALL_DIR $ROOT/scripts/stage-openfhe-development-hexl.sh; exit 1; break;;
+esac
