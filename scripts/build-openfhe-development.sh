@@ -29,15 +29,10 @@ fi
 echo "OPENFHE_INSTALL_DIR set to $OPENFHE_INSTALL_DIR"
 cmake $CMAKE_FLAGS -DCMAKE_INSTALL_PREFIX=$OPENFHE_INSTALL_DIR .. || abort "Failure of cmake in openfhe-development."
 
-CPUS=`lscpu | egrep "^CPU\(s\)" | awk '{print $2}'`
-if [ $CPUS -lt 1 ]; then
-  CPUS=1
-fi
-
 separator
-echo "Making openfhe-development with CC=$CC CXX=$CXX CMAKE_FLAGS=$CMAKE_FLAGS and $CPUS cpus."
+echo "Making openfhe-development with CC=$CC CXX=$CXX CMAKE_FLAGS=$CMAKE_FLAGS."
 echo
-make -j $CPUS || abort "Build of openfhe-development failed."
+make -j || abort "Build of openfhe-development failed."
 make install
 
 separator
