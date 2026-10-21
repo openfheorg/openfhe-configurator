@@ -16,15 +16,15 @@ if [ ! -d openfhe-development ]; then
 fi
 
 separator
-echo "Switching to openfhe-development branch $OPENFHE_DEVELOPMENT_BRANCH."
+echo "Switching to openfhe-development tag $OPENFHE_DEVELOPMENT_BRANCH."
 echo
 cd $ROOT/repos/openfhe-development || abort "Clone of openfhe-development failed."
 git checkout main || abort "Checkout of openfhe-hexl main failed."
 git pull || abort "Pull of the openfhe-development failed."
-git checkout $OPENFHE_DEVELOPMENT_BRANCH || abort "Checkout of openfhe-development branch $OPENFHE_DEVELOPMENT_BRANCH failed."
+git checkout $OPENFHE_DEVELOPMENT_BRANCH || abort "Checkout of openfhe-development tag $OPENFHE_DEVELOPMENT_BRANCH failed."
 
 separator
-echo "Status of openfhe-development branch $OPENFHE_DEVELOPMENT_BRANCH."
+echo "Status of openfhe-development tag $OPENFHE_DEVELOPMENT_BRANCH."
 echo
 git status
 
