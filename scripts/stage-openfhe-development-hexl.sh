@@ -20,15 +20,15 @@ if [ ! -d $ROOT/repos/openfhe-hexl ]; then
 fi
 
 separator
-echo "Switching to openfhe-hexl branch $OPENFHE_HEXL_BRANCH."
+echo "Switching to openfhe-hexl tag $OPENFHE_HEXL_BRANCH."
 echo
 cd $ROOT/repos/openfhe-hexl || abort "Clone of openfhe-hexl failed."
 git checkout main || abort "Checkout of openfhe-hexl main failed."
 git pull || abort "Pull of the openfhe-hexl failed."
-git checkout $OPENFHE_HEXL_BRANCH || abort "Checkout of openfhe-hexl branch $OPENFHE_HEXL_BRANCH failed."
+git checkout $OPENFHE_HEXL_BRANCH || abort "Checkout of openfhe-hexl tag $OPENFHE_HEXL_BRANCH failed."
 
 separator
-echo "Status of openfhe-hexl branch $OPENFHE_HEXL_BRANCH."
+echo "Status of openfhe-hexl tag $OPENFHE_HEXL_BRANCH."
 echo
 git status
 
